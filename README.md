@@ -5,10 +5,6 @@ TCGA MAF Data analysis
 
 When we download the maf data from the TCGA, we need to do some pre-filtering to the maf data. This packages provides some methods to do with the MAF data.
 
-
-
-
-
 ## Dependencies  
 
 Required R packages including:
