@@ -1,9 +1,9 @@
 # MafData
 TCGA MAF Data analysis
 
-##Concepts
+## Concepts
 
-When we download the maf data from the TCGA, we need to do some pre-filtering to the maf data. This packages provides some methods to do with the MAF data.
+When we download the maf data from the TCGA, we need to do some pre-filtering to the maf data. This packages provides some methods to do with the MAF data. More details in: https://rpubs.com/cqj_00/MAF_Process
 
 ## Dependencies  
 
