@@ -1,0 +1,342 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "R/dndscv1.R",
+			"settings":
+			{
+				"buffer_size": 34941,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "R/KiKs_cancer.R",
+			"settings":
+			{
+				"buffer_size": 40362,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"package control",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/Rproject/MafData",
+		"/E/Rproject/MafData/R",
+		"/E/Rproject/MafData/vignettes"
+	],
+	"file_history":
+	[
+		"/E/Rproject/yiping/PCA/PCA_Rap.R",
+		"/E/data/MaFQ/code/MAF.R",
+		"/E/data/Luga/quality_control.r",
+		"/E/data/Luga/RNAseq.sh",
+		"/E/data/Luga/transcriptomes analysis.sh",
+		"/E/Rproject/yiping/Cluster_20190419/cluster.R",
+		"/C/Users/admin/Desktop/sysu_rj_1.id",
+		"/E/GitHub/dndscv/R/dndscv-package.R",
+		"/H/server/Data/o2seq/cmd.sh",
+		"/D/Program Files/R/R-3.6.1/library/dndscv/R/dndscv",
+		"/E/GitHub/ExomePipe/GATK_example.sh",
+		"/E/GitHub/ExomePipe/conf/C2_451.config",
+		"/E/GitHub/ExomePipe/conf/C2_wgs.config",
+		"/E/GitHub/ExomePipe/conf/base.config",
+		"/E/GitHub/ExomePipe/nextflow.config",
+		"/E/GitHub/ExomePipe/conf/C2.config",
+		"/E/GitHub/ExomePipe/Example.tsv",
+		"/E/SYSUCC/Polyps/dbGAP数据下载/sample.histological.type.txt",
+		"/E/SYSUCC/Polyps/dbGAP数据下载/A01.sh",
+		"/E/GitHub/ExomePipe/ExomePipe.sh",
+		"/E/GitHub/ExomePipe/conf/S2.config",
+		"/E/GitHub/ExomePipe/ExomePipe.nf",
+		"/E/Rproject/MafData/R/dndscv1.R",
+		"/E/SYSUCC/Polyps/dbGAP数据下载/Sample.info.WGS.tsv",
+		"/E/SYSUCC/Polyps/dbGAP数据下载/A01.tsv",
+		"/E/SYSUCC/Polyps/dbGAP数据下载/A02.tsv",
+		"/E/SYSUCC/Polyps/dbGAP数据下载/A03.tsv",
+		"/E/SYSUCC/Polyps/dbGAP数据下载/A04.tsv",
+		"/E/SYSUCC/Polyps/dbGAP数据下载/A0506.tsv",
+		"/E/SYSUCC/Polyps/dbGAP数据下载/A04.sh",
+		"/E/GitHub/ExomePipe/ExomePipe_report.2.html",
+		"/D/TSBrowserDownloads/genome.dict",
+		"/C/Users/admin/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/E/GitHub/ExomePipe/bin/freec_result_to_GISTIC_seg.pl",
+		"/D/TSBrowserDownloads/Package Control.sublime-package",
+		"/E/GitHub/SSB_selection/scripts/calc_global_dnds_genelist.R",
+		"/E/GitHub/SSB_selection/scripts/greenmanmethod_ContextCor_final.R",
+		"/E/Rproject/MafData/R/KiKs_cancer.R",
+		"/E/SYSUCC/Polyps/dbGAP数据下载/dbGAP_download.sh",
+		"/E/GitHub/ExomePipe/Test.PBS.sh",
+		"/D/TSBrowserDownloads/Monokai.tmTheme",
+		"/E/GitHub/SSB_selection/scripts/calc_global_dnds.R",
+		"/E/Rproject/CRC_Driver/CRC_Driver.R",
+		"/E/data/TCGA/cbioportal/cbioportal.R",
+		"/E/data/TCGA/cbioportal/TCGA_Data_Manage.R",
+		"/D/TSBrowserDownloads/sra_data.fastq/sra_data.fastq",
+		"/D/TSBrowserDownloads/mutation-code.R",
+		"/E/data/TCGA/cbioportal/AS_Dis_x.R",
+		"/D/TSBrowserDownloads/metastasis_analysis_code.R",
+		"/E/data/TCGA/cbioportal/DownloadTCGA.R",
+		"/D/TSBrowserDownloads/survival_analysis_code.R",
+		"/D/TSBrowserDownloads/wget.sh",
+		"/C/Users/admin/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/admin/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/E/Rproject/._heart.R",
+		"/E/Rproject/CRC_Driver/cgds.R",
+		"/D/Program Files/RStudio/R/Diagnostics.R",
+		"/D/Program Files/RStudio/R/ServerOptions.R",
+		"/D/Program Files/RStudio/R/Tools.R",
+		"/C/Users/admin/Documents/rstudio-diagnostics/diagnostics-report.txt",
+		"/E/Rproject/MafData/R/Generate_RefCDS_sum.R",
+		"/E/Rproject/MafData/R/makeSubstmodel.R",
+		"/E/Rproject/MafData/R/dndscv.R",
+		"/C/Users/admin/Desktop/Polyps/HPCH2018007_124_605_Result/HPCH2018007_124_605_Result/ZAN/S20181204078-a_snp.vcf",
+		"/C/Users/admin/Desktop/Polyps/HPCH2018007_124_605_Result/HPCH2018007_124_605_Result/ZAN/S20181204077-7_snp.vcf",
+		"/C/Users/admin/Desktop/Polyps/HPCH2018007_124_605_Result/HPCH2018007_124_605_Result/02.SNP_INDEL/tissue/S20180809039-3_snp.vcf",
+		"/E/Yiping/F18FTSSCWLJ2954_PLAythM/Reads/md5.txt",
+		"/D/TSBrowserDownloads/clinical.project-TCGA-COAD.2019-08-28.json",
+		"/D/TSBrowserDownloads/clinical.project-TCGA-READ.2019-08-27/clinical.tsv",
+		"/E/Rproject/dndscv-master/R/dndscv.R",
+		"/E/Rproject/MafData/DESCRIPTION",
+		"/E/Rproject/MafData/NAMESPACE"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"package",
+			"substmodel",
+			"parmle",
+			"substmodel",
+			"nchar",
+			"selfun_Ki",
+			"N_EI",
+			"\t"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			" "
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "R/dndscv1.R",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 34941,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19421,
+								19433
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/R/R.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6551.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "R/KiKs_cancer.R",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 40362,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1058,
+								1058
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/R/R.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "MafData.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 252.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,149 @@
+---
+title: "MafProcess"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{MafProcess}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+##Main concepts
+
+####1. maf data filtering
+When we download the maf data from the tcga, we need to do some pre-filtering to the maf data.
+
+the function filter_MAF will do the maf filtering. This function includes a list of functions:
+
+(1)hg_converter: whether converte the mutations coordinate, hg19 -> hg38 or hg38 -> hg19.
+
+(2)unique_tumor_addition_function: Adds a column called "Unique_patient_identifier" to your MAF file
+
+(3)tumor_allele_adder: add tumor allele 
+
+(4)DNP_TNP_remover: removing dinucleotide
+
+(5)removing_patients: removing patients according to their mutation numbers or patients IDs.
+
+(6)retaining MC3 mutations.
+
+(7)getAltFreq : calculate the alternative allele frequecy of mutations.
+
+
+```{r maf, tidy=TRUE, warning = FALSE}
+library(MafData)
+library(dndscv)
+library(maftools)
+
+#this maf is hg38
+maf <- read.delim(
+  file = gzfile( system.file("extdata", "TCGA.KIRC.maf.gz", package = "MafData")) ,
+ header = T ,stringsAsFactors = F)
+
+#load patientsID: These patients are removed hyper-mutations ones.
+patientsID = read.delim( system.file("extdata", "panCancer.patients.Sort.ID", package = "MafData") , header = F)
+colnames(patientsID) =c("Cancer","MutNum","PatientsID")
+
+chain = system.file("extdata", "hg38ToHg19.over.chain", package = "MafData")
+
+
+#select the first 10 patients
+maf_hg19 = filter_MAF(MAF = maf,convert_coordinate = T, chain = chain, patientsID = patientsID$ID[1:10] )
+
+#convert from hg38 to hg19
+maf_hg19 = filter_MAF(MAF = maf, convert_coordinate = T, chain = chain )
+
+#set the mutation number cutoff is 10-500
+maf_hg19 = filter_MAF(MAF = maf, maxNum =500 , minNum = 10  ,convert_coordinate = T, chain = chain )
+
+#filtering MC3 mutations.
+maf_hg19 = filter_MAF(MAF = maf, filterMC3 = T, addAltFreq = T, maxNum =500 , minNum = 10  ,convert_coordinate = T, chain = chain )
+
+#get the alternative allele frequency.
+maf_hg19 = filter_MAF(MAF = maf, filterMC3 = F, addAltFreq = T, maxNum =500 , minNum = 10  ,convert_coordinate = T, chain = chain )
+
+#Summary patients mutations
+patients_col_name = "Tumor_Sample_Barcode"
+
+patients = data.frame( ID= rownames( table(maf[,patients_col_name]) ), MutNum = as.numeric( table(maf[,patients_col_name]) )  )
+
+summary(patients$MutNum)
+
+```
+####2. filter mutations by individual functions.
+
+```{r filter, tidy=TRUE, warning = FALSE, results='hold'}
+
+message("1) hg_converter; ", chain)
+maf <- hg_converter(chain = chain, maf_to_convert = maf)
+
+message("2) unique_tumor_addition_function ;summary for tumor data")
+maf <- unique_tumor_addition_function(MAF.file = maf)
+
+message("3) tumor_allele_adder; check out tumor column names.")
+maf <- tumor_allele_adder(MAF = maf)
+
+message( "4) DNP_TNP_remover; Removing DNV and TNV" )
+maf <- DNP_TNP_remover(MAF = maf)
+
+message( "5)removing_patients;  removing patients.
+# 1)removing patients.  2) removing patients more than N mutations.")
+maf <- removing_patients(MAF= maf, patientsID = patientsID$ID, maxNum = 3000, minNum = 0 )
+
+message("6) filterMC3")
+
+if(is.character(maf[,"MC3_Overlap"])){
+    maf[,"MC3_Overlap"] = ifelse( toupper(maf[,"MC3_Overlap"]) == "TRUE", TRUE, FALSE )
+}
+
+if(is.logical(maf[,"MC3_Overlap"])){
+    maf <- maf[ maf[,"MC3_Overlap"] == TRUE , ]
+}else{
+    message( sprintf("The column %s is not TRUE or FALSE", "MC3_Overlap" ))
+}
+
+message("7) getAltFreq")
+maf <- getAltFreq(MAF = maf, t_depth = "t_depth", t_alt_count = "t_alt_count")
+
+```
+
+
+
+
+
+####3. calculating cancer genes dN/dS
+
+```{r dnds, tidy=TRUE, warning = FALSE, results='hold'}
+
+#out_formate: convert the MAF formate for the dndscv.
+KIRC.mut = out_formate(MAF = maf_hg19)
+KIRC.dndscv = dndscv(mutations = KIRC.mut,  max_muts_per_gene_per_sample = 1000, outp = 3)
+KIRC.driver = KIRC.dndscv$sel_cv
+
+head(KIRC.driver)
+
+```
+
+####3. load data into maftools 
+
+
+```{r maftools, tidy=TRUE, warning = FALSE, results='asis'}
+library(maftools)
+
+KIRC.maf <- read.maf(maf = maf_hg19, isTCGA = T)
+
+#calculate diversity
+KIRC.ab.het <- inferHeterogeneity(maf = KIRC.maf , vafCol = 't_alt_freq', top = nrow(getSampleSummary(KIRC.maf)) )
+
+KIRC.ab.het.math = unique.data.frame( KIRC.ab.het$clusterData[, c("Tumor_Sample_Barcode","MATH")])
+
+plot(density(KIRC.ab.het.math$MATH))
+
+```
+

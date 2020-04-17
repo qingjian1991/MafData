@@ -1,0 +1,15 @@
+Package: MafData
+Title: TCGA MAF data and management
+Version: 0.0.1
+Authors@R: person("Qingjian", "Chen", email = "chenqingjian2010@163.com", role = c("aut", "cre"))
+Description: This Packages including some TCGA MAF data and some functions; this functions helps to filter out TCGA data.
+Depends: R (>= 3.5.1)
+Imports: dplyr, rtracklayer, GenomicRanges
+License: GPL-3 + file LICENSE
+Encoding: UTF-8
+LazyData: false
+RoxygenNote: 7.1.0
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Packaged: 2018-10-11 00:44:23 ; biocbuild
